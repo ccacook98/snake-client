@@ -1,6 +1,6 @@
 let connection;
 
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   // \u0003 maps to ctrl+c input
   switch (key) {
   case '\u0003':
@@ -30,7 +30,7 @@ const handleUserInput = function (key) {
   }
 };
 
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -42,5 +42,5 @@ const setupInput = function (conn) {
 
 module.exports = {
   setupInput,
-}
+};
 
