@@ -18,6 +18,15 @@ const handleUserInput = function (key) {
   case 'd':
     connection.write("Move: right");
     break;
+  case 'h':
+    connection.write("Say: Hi!");
+    break;
+  case 'y':
+    connection.write("Say: Yes.");
+    break;
+  case 'n':
+    connection.write("Say: No.");
+    break;
   }
 };
 
