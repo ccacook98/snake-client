@@ -1,3 +1,5 @@
+let connection;
+
 const handleUserInput = function (key) {
   // \u0003 maps to ctrl+c input
   switch (key) {
@@ -5,21 +7,22 @@ const handleUserInput = function (key) {
     process.exit();
     break;
   case 'w':
-    console.log("Move: up");
+    connection.write("Move: up");
     break;
   case 's':
-    console.log("Move: down");
+    connection.write("Move: down");
     break;
   case 'a':
-    console.log("Move: left");
+    connection.write("Move: left");
     break;
   case 'd':
-    console.log("Move: right");
+    connection.write("Move: right");
     break;
   }
 };
 
-const setupInput = function () {
+const setupInput = function (conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
